@@ -4,10 +4,13 @@ import db from './db.js'
 import * as z from 'zod'
 import openai from './openai.js'
 import {zodResponseFormat} from 'openai/helpers/zod'
+import cors from 'cors'
 
 dotenv.config()
 
 const app=express()
+
+app.use(cors())
 
 const responseSchema=z.object({
     success:z.boolean(),
@@ -223,8 +226,6 @@ app.get('/',async (req,res)=>{
         }
 
         const returnedData=await executeQuery(query)
-
-        console.log(`user question: ${search}, SQL query: ${query}, Data: ${JSON.stringify(returnedData.rows)}`)
 
         const finalMessages=[{
             role:'system' as const,

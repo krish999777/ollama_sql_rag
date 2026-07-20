@@ -16,7 +16,7 @@ export default function App(){
     const search=String(formData.get('search'))
     try{
       const response=await getResponse(search)
-      setResponse(response)
+      setResponse(response.message)
     }catch(err:any){
       setError(err?.error||'Unknown error')
     }finally{
