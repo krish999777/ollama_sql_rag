@@ -1,10 +1,11 @@
 export default async function getResponse(search:string){
-    const backendUrl=import.meta.env.BACKEND_URL||'http://localhost:8000'
+    const backendUrl=import.meta.env.VITE_BACKEND_URL||'http://localhost:8000'
     try{
         if(!search||typeof search!=='string'||!search.trim()){
             throw new Error('Search cannot be empty')
         }
-        const res=await fetch(`${backendUrl}?search=${search.trim()}`)
+        const params = new URLSearchParams({ search: search.trim() })
+        const res=await fetch(`${backendUrl}?search=${params.toString()}`)
         const data=await res.json()
         if(!res.ok){
             throw new Error(data.error)
