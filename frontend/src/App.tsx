@@ -45,7 +45,7 @@ export default function App(){
             color:'#5FD68A',
             letterSpacing:'0.05em',
             margin:'0 0 8px'
-          }}>QUESTION → QUERY → ANSWER</p>
+          }}>No SQL. Just ask.</p>
           <h1 style={{
             fontSize:'22px',
             fontWeight:500,
@@ -71,6 +71,7 @@ export default function App(){
               userSelect:'none'
             }}>{'>'}</span>
             <input
+              autoComplete="off"
               required={true}
               name="search"
               placeholder="how many users have resumes"
