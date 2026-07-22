@@ -47,14 +47,14 @@ app.get('/',async (req,res)=>{
         You have to respond in a JSON file in the following format:
         {
             success:true||false,
-            error:undefined||string,
-            query:undefined||string
+            error:null||string,
+            query:null||string
         }
-        If the users query is not related to these tables or asks for things other than search, then keep success field false, query field null and error field as:
+        If the users query is not related to these tables or asks for things that needs  'DROP', 'DELETE', 'UPDATE', 'INSERT', 'ALTER', 'TRUNCATE', 'GRANT', 'REVOKE','CREATE' then keep success field false, query field null and error field as:
         Sorry I do not have access to satisfy this query
 
         If you can make the SQL query then keep the success field true,error field null and query field as the SQL query needed to answers the users question
-        Create the SQL query from what the user asks, I have provided an example
+        Create the SQL query from what the user asks, I have provided some examples
 
         column_name,data_type,is_nullable
         users:
