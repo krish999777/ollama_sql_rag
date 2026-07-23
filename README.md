@@ -1,6 +1,6 @@
 # Ask-Your-Database
 
-A small 3-agent pipeline that turns a natural language question into a SQL query, validates it, runs it against a real Postgres database, and turns the result back into a plain-English answer.
+A small 2-agent pipeline that turns a natural language question into a SQL query, validates it, runs it against a real Postgres database, and turns the result back into a plain-English answer.
 
 Built as a hands-on learning project to understand structured LLM output, deterministic safety validation, and multi-step agent chaining — without a framework (no LangChain/LangGraph). Uses a local Ollama model via the OpenAI-compatible client.
 
